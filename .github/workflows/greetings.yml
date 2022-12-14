@@ -1,0 +1,16 @@
+name: Greetings
+
+on: [pull_request_target, issues]
+
+jobs:
+  greeting:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+      pull-requests: write
+    steps:
+    - uses: actions/first-interaction@v1
+      with:
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
+        issue-message: "hello thanks for reporting a issue on this project, the issue has been repported to the moderators and the owner of this project"
+        pr-message: "a pull request has been send to the moderators and owner of this project and will be pulled when needed too"
