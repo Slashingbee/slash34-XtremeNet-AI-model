@@ -1,0 +1,17 @@
+var script = document.createElement('script');
+script.src = 'https://raw.githubusercontent.com/Slashingbee/slash34-XtremeNet-AI-model/master/XtremeNet.js';
+document.body.appendChild(script);
+var textBox = document.createElement('input');
+textBox.type = 'text';
+textBox.id = 'textBox';
+textBox.value = 'Hello World';
+document.body.appendChild(textBox);
+var renderButton = document.createElement('button');
+renderButton.innerHTML = 'RENDER';
+renderButton.onclick = function() {
+  var text = document.getElementById('textBox').value;
+  var image = document.createElement('img');
+  image.src = 'https://raw.githubusercontent.com/Slashingbee/slash34-XtremeNet-AI-model/master/XtremeNet.js?text=' + text;
+  document.body.appendChild(image);
+};
+document.body.appendChild(renderButton);
